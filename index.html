@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>UI-елементи: лабораторна робота</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>UI-елементи веб-інтерфейсу</h1>
+      <p class="sub">
+        Лабораторна робота: 10 елементів із поясненням призначення. Усі елементи
+        інтерактивні.
+      </p>
+
+      <section class="card">
+        <h2>1. Radiobutton (перемикач)</h2>
+        <label
+          ><input type="radio" name="deliv" value="Самовивіз" checked />
+          Самовивіз</label
+        >
+        <label><input type="radio" name="deliv" value="Кур’єр" /> Кур’єр</label>
+        <label><input type="radio" name="deliv" value="Пошта" /> Пошта</label>
+        <p class="why">
+          <b>Призначення:</b> вибір <b>лише одного</b> варіанта з невеликого
+          набору взаємовиключних. Вибір нового варіанта автоматично скасовує
+          попередній.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>2. Checkbox (прапорець)</h2>
+        <label
+          ><input type="checkbox" class="opt" value="Гарантія" /> Додаткова
+          гарантія</label
+        >
+        <label
+          ><input type="checkbox" class="opt" value="Подарункова упаковка" />
+          Подарункова упаковка</label
+        >
+        <label
+          ><input type="checkbox" class="opt" value="SMS-сповіщення" />
+          SMS-сповіщення</label
+        >
+        <p class="why">
+          <b>Призначення:</b> увімкнення або вимкнення <b>незалежних</b> опцій;
+          можна обрати жодної, одну або кілька.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>3. Text input (текстове поле)</h2>
+        <label for="name">Ваше ім’я</label>
+        <input type="text" id="name" placeholder="Введіть ім’я" />
+        <p class="why">
+          <b>Призначення:</b> введення довільного тексту користувачем (ім’я,
+          пошук, адреса). Підказка-плейсхолдер показує, що саме вводити.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>4. Tabs (вкладки)</h2>
+        <div class="tabbar" role="tablist">
+          <button class="tab" role="tab" aria-selected="true" data-i="0">
+            Опис
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-i="1">
+            Характеристики
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-i="2">
+            Відгуки
+          </button>
+        </div>
+        <div class="panel" id="p0">
+          Це вкладка «Опис»: загальна інформація про об’єкт.
+        </div>
+        <div class="panel" id="p1" hidden>
+          Це вкладка «Характеристики»: технічні параметри.
+        </div>
+        <div class="panel" id="p2" hidden>
+          Це вкладка «Відгуки»: думки користувачів.
+        </div>
+        <p class="why">
+          <b>Призначення:</b> групування пов’язаного контенту в одному місці;
+          одночасно видно лише одну вкладку, що економить простір екрана.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>5. Button (кнопка)</h2>
+        <button class="btn" id="go">Показати вибір</button>
+        <div id="out" aria-live="polite"></div>
+        <p class="why">
+          <b>Призначення:</b> запуск дії за натисненням. Тут кнопка збирає
+          значення з елементів 1–3 та 9 і виводить їх.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>6. Text label (текстова мітка)</h2>
+        <label for="lbl-demo">Електронна пошта:</label>
+        <input type="text" id="lbl-demo" placeholder="name@example.com" />
+        <p class="why">
+          <b>Призначення:</b> підпис, що пояснює, для чого поле або елемент.
+          Мітка, пов’язана з полем (атрибут <code>for</code>), також збільшує
+          область натискання та допомагає програмам читання з екрана.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>7. Link (посилання)</h2>
+        <p>
+          <a
+            href="https://developer.mozilla.org/uk/docs/Web/HTML"
+            target="_blank"
+            rel="noopener"
+            >Документація з HTML (MDN)</a
+          >
+        </p>
+        <p class="why">
+          <b>Призначення:</b> перехід на іншу сторінку, розділ або ресурс.
+          Відрізняється від кнопки тим, що веде до навігації, а не виконує дію
+          на поточній сторінці.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>8. Tooltip (підказка)</h2>
+        <p>
+          Наведіть курсор на слово:
+          <span class="tip" tabindex="0"
+            >QA<span role="tooltip"
+              >QA (Quality Assurance)-забезпечення якості програмного
+              продукту.</span
+            ></span
+          >
+        </p>
+        <p class="why">
+          <b>Призначення:</b> коротке пояснення, що з’являється при наведенні
+          або фокусі, без зайвого захаращення інтерфейсу.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>9. Dropdown list (випадаючий список)</h2>
+        <label for="city">Місто доставки</label>
+        <select id="city">
+          <option>Київ</option>
+          <option>Львів</option>
+          <option>Одеса</option>
+          <option>Харків</option>
+          <option>Дніпро</option>
+        </select>
+        <p class="why">
+          <b>Призначення:</b> вибір одного значення з довгого списку, який не
+          займає місця, поки його не розкрито.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>10. Data grid (таблиця даних)</h2>
+        <div class="scroll">
+          <table id="grid">
+            <thead>
+              <tr>
+                <th data-c="0">ID ⇅</th>
+                <th data-c="1">Назва ⇅</th>
+                <th data-c="2">Статус ⇅</th>
+                <th data-c="3">Ціна, грн ⇅</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3</td>
+                <td>Клавіатура</td>
+                <td>В наявності</td>
+                <td>850</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Мишка</td>
+                <td>В наявності</td>
+                <td>420</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Монітор</td>
+                <td>Очікується</td>
+                <td>7200</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Навушники</td>
+                <td>Немає</td>
+                <td>1300</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="why">
+          <b>Призначення:</b> структуроване відображення багатьох записів у
+          рядках і стовпцях. Клацніть на заголовок стовпця, щоб відсортувати
+          дані.
+        </p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
